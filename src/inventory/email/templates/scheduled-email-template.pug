@@ -1,0 +1,27 @@
+doctype 5
+html(lang="en")   
+    head 
+    body 
+        - const listStyles = { "color": "#36454F", "text-transform": 'uppercase', "font-weight": "600" }
+        p Dear Stanze,
+        h4 You are receiving your weekly scheduled email!
+        each item in items
+            ul
+                li Item  Name: 
+                    span(style=listStyles) #{ item.item }
+                li Recent Catalog Number: 
+                    span(style=listStyles) #{ item.master.recent_cn }
+                li Recent Vendor: 
+                    span(style=listStyles) #{ item.master.recent_vendor }
+                li Currently In Stock: 
+                    span(style=listStyles) #{ item.quantity }
+                li Amount To Be Ordered: 
+                    span(style=listStyles) #{ item.order_quantity }
+                li Minimum Quantity: 
+                    span(style=listStyles) #{ item.min_quantity }
+                li Maximum Quantity: 
+                    span(style=listStyles) #{ item.max_quantity }
+                li Comments: 
+                    span(style=listStyles) #{ item.comments }
+            br
+        p Thank You!
